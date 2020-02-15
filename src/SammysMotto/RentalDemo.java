@@ -53,6 +53,12 @@ public class RentalDemo {
 		int minutes1 = minutesRented();
 		rent1.setHoursAndMinutes(minutes1);
 		
+		Rental rent2 = new Rental();
+		String contract2 = contractNumber();
+		rent1.setContractNumber(contract2);
+		int minutes2 = minutesRented();
+		rent1.setHoursAndMinutes(minutes2);
+		
 
 		
 	}
