@@ -7,25 +7,25 @@ public class RentalDemo {
 	public static void main(String[] args) {
 		
 		// Declare new rental object
-		Rental rent = new Rental();
+		//Rental rent = new Rental();
 		
 		//Send default values to contractNumber(String,int) method to print results
-		contractNumber(rent,rent.getContractNumber(),rent.getHoursRented());
+		//contractNumber(rent,rent.getContractNumber(),rent.getHoursRented());
 		
 		//Take in values from the user
-		String contractNumber = contractNumber();
-		int minutes = minutesRented();
+		//String contractNumber = contractNumber();
+		//int minutes = minutesRented();
 		
 		//Declare second rental object
-		Rental rent2 = new Rental(contractNumber,minutes);
+		//Rental rent2 = new Rental(contractNumber,minutes);
 		
 		//Print results for rental object 2
-		contractNumber(rent2,rent2.getContractNumber(),rent2.getHoursRented());
+		//contractNumber(rent2,rent2.getContractNumber(),rent2.getHoursRented());
 		
-		double price = rent2.getPrice();
+		//double price = rent2.getPrice();
 		
-		System.out.println(price);
-		System.out.println(rent2.getMinutesOver());
+		//System.out.println(price);
+		//System.out.println(rent2.getMinutesOver());
 		
 		
 		
@@ -43,6 +43,16 @@ public class RentalDemo {
 		
 		// calculate price and time, print to screen
 		//SammysRentalPriceWithMethods.calculatePrice(rent);
+		
+		/**
+		 *  Begin Unit 5 Case 2
+		 */
+		Rental rent1 = new Rental();
+		String contract1 = contractNumber();
+		rent1.setContractNumber(contract1);
+		int minutes1 = minutesRented();
+		rent1.setHoursAndMinutes(minutes1);
+		
 
 		
 	}
@@ -61,7 +71,6 @@ public class RentalDemo {
 	}
 	public static void contractNumber(Rental rent, String contractNum, int minutesX) {
 		System.out.println("Contract number is: " + contractNum);
-		
 		System.out.println("Time rented: |Hours: " + rent.getHoursRented()+ "| |Minutes: " + rent.getMinutesOver()+"|");
 	
 	}
