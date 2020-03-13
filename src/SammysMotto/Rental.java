@@ -1,5 +1,7 @@
 package SammysMotto;
 
+import java.util.Scanner;
+
 public class Rental {
 	
 	// final static variables that wont change
@@ -11,6 +13,7 @@ public class Rental {
 	private int hoursRented;
 	private int minutesOver;
 	private double price;
+	private String phoneNumber;
 
 	
 	public Rental() {
@@ -53,5 +56,46 @@ public class Rental {
 	public double getPrice() {
 		return price;
 	}// end getPrice()
+	//method to get phone number
+		public String getPhoneNumber() {
+			
+			//initialize and declare String to hold formatted phone number
+			String formattedPhoneNumber = "";
+			
+			//format first 3 characters
+			formattedPhoneNumber += "(" + phoneNumber.substring(0, 3) + ")";
+
+			// formatnext three characters
+			formattedPhoneNumber += phoneNumber.substring(3, 6);
+
+			// Then append the "-" sign to the formattedPhoneNumber
+			formattedPhoneNumber += "-";
+
+			//format remaining characters
+			formattedPhoneNumber += phoneNumber.substring(6, phoneNumber.length());
+			
+			//set formatted String to phoneNumber class variable
+			phoneNumber = formattedPhoneNumber;
+			
+			//return phoneNumber
+			return phoneNumber;
+		}
+	public void setPhoneNumber() {
+		String tempPhone = "";
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter phone number ");
+		phoneNumber = scan.nextLine();
+		
+		//for loop to checks individual char and saves the digits to tempPhone
+		for (int i = 0; i < phoneNumber.length(); i++) {
+			if (Character.isDigit(phoneNumber.charAt(i)))
+				tempPhone += phoneNumber.charAt(i);
+			}
+		//if number over or under 10 digits sets default
+		if (tempPhone.length() < 10 || tempPhone.length() > 10)
+			this.phoneNumber = "0000000000";
+		else
+			this.phoneNumber = tempPhone;
+	}
 }
 

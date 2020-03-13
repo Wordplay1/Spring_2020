@@ -40,6 +40,11 @@ public class CelsiusFahrenheit {
 		//print celsius to fahrenheit results
 		System.out.println(celsius + " degress in celsius temperature converted to "
 				+ "fahrenheit is: " + fahrenheit);
-	}
+		
+		for (int f = 1, g = 4; f < g; ++f,--g) {
 
+			   System.out.print(f + " " + g + " ");
+		}
+	}
+	
 }
