@@ -51,51 +51,59 @@ public class RentalDemo {
 		 */
 		
 		//Declare rental object
-		Rental rent1 = new Rental();
+		//Rental rent1 = new Rental();
 		
 		//Get contract number
-		String contract1 = contractNumber();
+		//String contract1 = contractNumber();
 		
 		//set the contract number to object
-		rent1.setContractNumber(contract1);
+		//rent1.setContractNumber(contract1);
 		
 		//Get minutes rented
-		int minutes1 = minutesRented();
+		//int minutes1 = minutesRented();
 		
 		//set minutes rented to rental object
-		rent1.setHoursAndMinutes(minutes1);
+		//rent1.setHoursAndMinutes(minutes1);
 		
 		//set phone number
-		rent1.setPhoneNumber();
+		//rent1.setPhoneNumber();
 		
 		//print results
-		printRental(rent1);
+		//printRental(rent1);
 		
 		//Repeat with second rental object
-		Rental rent2 = new Rental();
-		String contract2 = contractNumber();
-		rent2.setContractNumber(contract2);
-		int minutes2 = minutesRented();
-		rent2.setHoursAndMinutes(minutes2);
-		rent2.setPhoneNumber();
-		printRental(rent2);
+		//Rental rent2 = new Rental();
+		//String contract2 = contractNumber();
+		//rent2.setContractNumber(contract2);
+		//int minutes2 = minutesRented();
+		//rent2.setHoursAndMinutes(minutes2);
+		//rent2.setPhoneNumber();
+		//printRental(rent2);
 		
 		//repeat with third rental objet
-		Rental rent3 = new Rental();
-		String contract3 = contractNumber();
-		rent3.setContractNumber(contract3);
-		int minutes3 = minutesRented();
-		rent3.setHoursAndMinutes(minutes3);
-		rent3.setPhoneNumber();
-		printRental(rent3);
+		//Rental rent3 = new Rental();
+		//String contract3 = contractNumber();
+		//rent3.setContractNumber(contract3);
+		//int minutes3 = minutesRented();
+		//rent3.setHoursAndMinutes(minutes3);
+		//rent3.setPhoneNumber();
+		//printRental(rent3);
 		
 		//Compare rental objects 1 and 2 and store in rent object 4
-		Rental rent4 = compareRentals(rent1,rent2);
+		//Rental rent4 = compareRentals(rent1,rent2);
 		
 		//print results rental object with largest amount of minutes rented
-		printRental(rent4);
+		//printRental(rent4);
 		
-
+		Rental[] r = new Rental[3];
+		
+		for(int i = 0; i < 3; i++) {
+			r[i] = new Rental();
+			r[i].setEquipmentType(i);
+			System.out.println("Equipment Type: " + r[i].getEquipmentType());
+			System.out.println("Equipment Name: " + r[i].getEquipmentName() + "\n");
+			
+		}
 		
 	}
 	// contractNumber() method to set contract number
@@ -147,6 +155,7 @@ public class RentalDemo {
 		}while( i < hours);
 	
 	}
+	/*
 	//Method to compare rental objects
 	public static Rental compareRentals(Rental r1, Rental r2) {
 		if(r1.getHoursRented() > r2.getHoursRented()) {
@@ -156,4 +165,5 @@ public class RentalDemo {
 			return r2;
 		}
 	}
+	*/
 }

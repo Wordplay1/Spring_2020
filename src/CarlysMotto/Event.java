@@ -24,7 +24,7 @@ public class Event {
 	private String phoneNumber;
 	private int eventType;
 	
-	//Variables for module 8
+	// String array for module 8
 	public final static String[] eventNames = {"Wedding","Baptism","Birthday","Corporate","Other"};
 
 

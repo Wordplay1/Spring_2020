@@ -14,6 +14,10 @@ public class Rental {
 	private int minutesOver;
 	private double price;
 	private String phoneNumber;
+	private int equipmentType;
+	
+	// String array for Module 8 
+	public final static String[] equipmentNames = {"personal","watercraft","pontoon","boat","rowboat","canoe","kayak","beach chair","umbrella","other"};
 
 	
 	public Rental() {
@@ -36,6 +40,21 @@ public class Rental {
 		price = hoursRented * rate + minutesOver;
 		
 	}// end setHoursAndMinutes()
+	// method to getEquipmentType() accepts int value and sets value to equipmentType variable
+		public void setEquipmentType(int equipInput) {
+			if(equipInput > equipmentNames.length) {
+				equipmentType = equipmentNames.length - 1;
+			}else
+				equipmentType = equipInput;
+		}
+	//get equipmentType method
+	public int getEquipmentType() {
+		return equipmentType;
+	}
+	
+	public String getEquipmentName() {
+		return equipmentNames[equipmentType];
+	}
 	
 	// method to get contract number
 	public String getContractNumber() {

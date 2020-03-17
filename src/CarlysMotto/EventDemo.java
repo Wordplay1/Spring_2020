@@ -89,7 +89,10 @@ public class EventDemo {
 		System.out.println("Price is " + event6.getPrice());
 		*/
 		
-		//Start Module 8
+		/*
+		 * 
+		 * MODULE 8 START
+		 */
 		Event[]  e = new Event[3];
 		
 		for(int i = 0; i < 3; i++) {
