@@ -45,7 +45,7 @@ public class Event {
 	
 	// method to getEventType() accepts int value and sets value to eventType variable
 	public void setEventType(int eventInput) {
-		if(eventInput > eventNames.length) {
+		if(eventInput >= eventNames.length) {
 			eventType = eventNames.length - 1;
 		}else
 			eventType = eventInput;

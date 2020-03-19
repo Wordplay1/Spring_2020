@@ -95,8 +95,16 @@ public class RentalDemo {
 		//print results rental object with largest amount of minutes rented
 		//printRental(rent4);
 		
+		/*
+		 * 
+		 * START MODULE 8
+		 * 
+		 */
+		
+		//Declare array of Rental objects
 		Rental[] r = new Rental[3];
 		
+		//for loop to create, iterate, and print results of three rental objects
 		for(int i = 0; i < 3; i++) {
 			r[i] = new Rental();
 			r[i].setEquipmentType(i);
