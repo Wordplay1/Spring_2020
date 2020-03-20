@@ -247,6 +247,7 @@ public class RentalDemo {
 		switch (userInput) {
 		case 1:
 			System.out.println("** Sorting by Contract Number ascending...\n");
+			System.out.println();
 			for (a = 0; a < highSubscript; ++a) {
 				for (b = 0; b < highSubscript; ++b) {
 					if (r[b].getContractNumber().compareTo(r[b + 1].getContractNumber()) > 0) {
