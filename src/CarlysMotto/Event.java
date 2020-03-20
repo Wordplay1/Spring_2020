@@ -15,7 +15,6 @@ public class Event {
 	public final static double lowPricePerGuest = 32;
 	public final static double highPricePerGuest = 35;
 	public final static int eventMax = 50;
-	
 
 	// Declare variables that build the event object.
 	private String eventNumber;
@@ -23,10 +22,9 @@ public class Event {
 	private double price;
 	private String phoneNumber;
 	private int eventType;
-	
-	// String array for module 8
-	public final static String[] eventNames = {"Wedding","Baptism","Birthday","Corporate","Other"};
 
+	// String array for module 8
+	public final static String[] eventNames = { "Wedding", "Baptism", "Birthday", "Corporate", "Other" };
 
 	// setEventNumber methods to set event number
 	public void setEventNumber(String event) {
@@ -42,19 +40,22 @@ public class Event {
 			price = numberOfGuest * lowPricePerGuest;
 		}
 	}// end setGuest()
-	
-	// method to getEventType() accepts int value and sets value to eventType variable
+
+	// method to getEventType() accepts int value and sets value to eventType
+	// variable
 	public void setEventType(int eventInput) {
-		if(eventInput >= eventNames.length) {
+		if (eventInput >= eventNames.length) {
 			eventType = eventNames.length - 1;
-		}else
+		} else
 			eventType = eventInput;
 	}
-	//method to return eventType
+
+	// method to return eventType
 	public int getEventType() {
 		return eventType;
 	}
-	//method to get return name based on eventType
+
+	// method to get return name based on eventType
 	public String getEventName() {
 		return eventNames[eventType];
 	}
@@ -74,13 +75,14 @@ public class Event {
 		return price;
 	}// end getPrice()
 		// Start chapter 5 case problem
-	//method to get phone number
+		// method to get phone number
+
 	public String getPhoneNumber() {
-		
-		//initialize and declare String to hold formatted phone number
+
+		// initialize and declare String to hold formatted phone number
 		String formattedPhoneNumber = "";
-		
-		//format first 3 characters
+
+		// format first 3 characters
 		formattedPhoneNumber += "(" + phoneNumber.substring(0, 3) + ")";
 
 		// formatnext three characters
@@ -89,13 +91,13 @@ public class Event {
 		// Then append the "-" sign to the formattedPhoneNumber
 		formattedPhoneNumber += "-";
 
-		//format remaining characters
+		// format remaining characters
 		formattedPhoneNumber += phoneNumber.substring(6, phoneNumber.length());
-		
-		//set formatted String to phoneNumber class variable
+
+		// set formatted String to phoneNumber class variable
 		phoneNumber = formattedPhoneNumber;
-		
-		//return phoneNumber
+
+		// return phoneNumber
 		return phoneNumber;
 	}
 
@@ -106,19 +108,20 @@ public class Event {
 		} else
 			return false;
 	}
-	//method to set phone number
+
+	// method to set phone number
 	public void setPhone() {
 		String tempPhone = "";
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter phone number ");
 		phoneNumber = scan.nextLine();
-		
-		//for loop to checks individual char and saves the digits to tempPhone
+
+		// for loop to checks individual char and saves the digits to tempPhone
 		for (int i = 0; i < phoneNumber.length(); i++) {
 			if (Character.isDigit(phoneNumber.charAt(i)))
 				tempPhone += phoneNumber.charAt(i);
-			}
-		//if number over or under 10 digits sets default
+		}
+		// if number over or under 10 digits sets default
 		if (tempPhone.length() < 10 || tempPhone.length() > 10)
 			this.phoneNumber = "0000000000";
 		else

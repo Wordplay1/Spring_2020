@@ -42,7 +42,7 @@ public class Rental {
 	}// end setHoursAndMinutes()
 	// method to getEquipmentType() accepts int value and sets value to equipmentType variable
 		public void setEquipmentType(int equipInput) {
-			if(equipInput > equipmentNames.length) {
+			if(equipInput >= equipmentNames.length) {
 				equipmentType = equipmentNames.length - 1;
 			}else
 				equipmentType = equipInput;
