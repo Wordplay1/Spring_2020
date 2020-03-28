@@ -63,7 +63,12 @@ public class Event {
 
 	// method to get return name based on eventType
 	public String getEventName() {
-		return eventNames[eventType];
+		if(eventType >= eventNames.length) {
+			eventType = eventNames.length - 1;
+			return eventNames[eventType];
+		}else {
+			return eventNames[eventType];
+		}
 	}
 
 	// getEventNumber() to return to event number

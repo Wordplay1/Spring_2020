@@ -3,7 +3,7 @@ package CarlysMotto;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class EventDemo {
+public class DinnerEventDemo {
 
 	public static void main(String[] args) {
 		/*
@@ -129,7 +129,7 @@ public class EventDemo {
 		int dessert;
 		int eventType;
 
-		DinnerEvent[] d = new DinnerEvent[1];
+		DinnerEvent[] d = new DinnerEvent[4];
 
 		for (int i = 0; i < d.length; i++) {
 			eventNum = eventNumber();
