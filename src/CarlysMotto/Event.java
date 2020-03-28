@@ -26,9 +26,10 @@ public class Event {
 	// String array for module 8
 	public final static String[] eventNames = { "Wedding", "Baptism", "Birthday", "Corporate", "Other" };
 	
-	public Event(String eventNum, int numOfGuest) {
+	public Event(String eventNum, int numOfGuest, int eType) {
 		this.eventNumber = eventNum;
 		this.numberOfGuest = numOfGuest;
+		this.eventType = eType;
 	}
 
 	// setEventNumber methods to set event number

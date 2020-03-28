@@ -144,8 +144,76 @@ public class EventDemo {
 		System.out.print("Exiting Program...");
 		*/
 		
-		DinnerEvent d = new DinnerEvent("A145",1,1,2,0,1);
-		d.getMenu();
+		/*
+		 * START MODULE 10
+		 * 
+		 */
+		String eventNum = "";
+		int guestNum = 0;
+		int entree;
+		int side1;
+		int side2;
+		int dessert;
+		int eventType = 0;
+		
+		
+	
+		
+		DinnerEvent[] d = new DinnerEvent[4];
+		
+		for(int i = 0; i < d.length; i++) {
+			eventNum = eventNumber();
+			guestNum = numberOfGuest();
+			eventType = eventTypePrompt();
+			entree = setEntree();
+			side1 = setSides();
+			side2 = setSidesTwo();
+			dessert = setDessert();
+			d[i] = new DinnerEvent(eventNum,guestNum,eventType,entree,side1,side2,dessert);
+			d[i].getMenu();
+		}
+		sortOptions();
+		Scanner scan = new Scanner(System.in);
+		int userInput = scan.nextInt();
+
+		// while loop for user input validation
+		while (userInput > 3) {
+			try {
+				System.out.println("Must be between -1,1,2,3");
+				userInput = scan.nextInt();
+			} catch (InputMismatchException r) {
+				System.out.println("Invalid, please enter an integer");
+				scan.nextLine();
+			}
+		}
+		while (userInput != -1) {
+			bubbleSort(d, userInput);
+
+			// list Event objects sorted
+			for (int i = 0; i < d.length; i++) {
+				System.out.println("Event Num: " + d[i].getEventNumber());
+				System.out.println("Guest Num: " + d[i].getNumberOfGuest());
+				System.out.println("Event type: " + d[i].getEventType());
+				d[i].getMenu();
+			}
+			// Prompt user again for sorting options
+			sortOptions();
+			userInput = scan.nextInt();
+			while (userInput > 4 || userInput < -1) {
+				try {
+					System.out.println("Must be between -1,1,2,3");
+					userInput = scan.nextInt();
+				} catch (InputMismatchException r) {
+					System.out.println("Invalid, please enter an integer");
+					scan.nextLine();
+				}
+			}
+
+		}
+		System.out.print("Exiting Program...");
+
+		
+		
 	}
 
 	// eventNumber() method to set event number from user input
@@ -217,7 +285,6 @@ public class EventDemo {
 		}
 		return guest;
 	}
-
 	// method to take user input for event type
 	public static int eventTypePrompt() {
 		Scanner scan = new Scanner(System.in);
@@ -229,6 +296,46 @@ public class EventDemo {
 			event = scan.nextInt();
 		}
 		return event;
+	}public static int setEntree() {
+		int entree;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("\nPlease select dinner options");
+		System.out.println("** Entrees");
+		System.out.println("** 0. Salmon");
+		System.out.println("** 1. Steak");
+		System.out.println("** 2. Chicken");
+		return entree = scan.nextInt();
+	}
+	
+	public static int setSides() {
+		int side1;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("\nPlease select side 1 options");
+		System.out.println("** Entrees");
+		System.out.println("** 0. Mashed Potatoes");
+		System.out.println("** 1. Broccoli");
+		System.out.println("** 2. Mac & Cheese");
+		return side1 = scan.nextInt();
+	}
+	public static int setSidesTwo() {
+		int side2;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("\nPlease select side 2 options");
+		System.out.println("** Entrees");
+		System.out.println("** 0. Mashed Potatoes");
+		System.out.println("** 1. Broccoli");
+		System.out.println("** 2. Mac & Cheese");
+		return side2 = scan.nextInt();
+	}
+	public static int setDessert() {
+		int dessert;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("\nPlease select dessert options");
+		System.out.println("** Entrees");
+		System.out.println("** 0. Ice Cream");
+		System.out.println("** 1. Cheesecake");
+		System.out.println("** 2. Cookies");
+		return dessert = scan.nextInt();
 	}
 
 	// method to utilize bubble sort to sort array object
