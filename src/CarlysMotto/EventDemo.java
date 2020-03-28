@@ -82,7 +82,7 @@ public class EventDemo {
 		/*
 		 * 
 		 * MODULE 9 START
-		 */
+		 
 
 		// Declare array of Event objects
 		String eventNum;
@@ -142,6 +142,10 @@ public class EventDemo {
 
 		}
 		System.out.print("Exiting Program...");
+		*/
+		
+		DinnerEvent d = new DinnerEvent("A145",1,1,2,0,1);
+		d.getMenu();
 	}
 
 	// eventNumber() method to set event number from user input
