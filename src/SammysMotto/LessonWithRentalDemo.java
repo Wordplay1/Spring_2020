@@ -1,165 +1,23 @@
 package SammysMotto;
 
 import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 import CarlysMotto.Event;
 
-public class RentalDemo {
+/* @Author: Donald Mears
+ * Title: LessonWithRentalDemo.java
+ * Description: LessonWithRentalDemo to test LessonWithRental.java class.
+ * 
+ * 
+ * 
+ */
+
+public class LessonWithRentalDemo {
 
 	public static void main(String[] args) {
 
-		// Declare new rental object
-		// Rental rent = new Rental();
-
-		// Send default values to contractNumber(String,int) method to print results
-		// contractNumber(rent,rent.getContractNumber(),rent.getHoursRented());
-
-		// Take in values from the user
-		// String contractNumber = contractNumber();
-		// int minutes = minutesRented();
-
-		// Declare second rental object
-		// Rental rent2 = new Rental(contractNumber,minutes);
-
-		// Print results for rental object 2
-		// contractNumber(rent2,rent2.getContractNumber(),rent2.getHoursRented());
-
-		// double price = rent2.getPrice();
-
-		// System.out.println(price);
-		// System.out.println(rent2.getMinutesOver());
-
-		// Set contract number
-		// rent.setContractNumber(contractNumber());
-
-		// Set time by calling oublic method getRentalTime
-		// int time = SammysRentalPriceWithMethods.getRentalTime();
-
-		// Display SammysMotto by calling public method displayMotto
-		// SammysRentalPriceWithMethods.displayMotto();
-
-		// set hours and minutes
-		// rent.setHoursAndMinutes(time);
-
-		// calculate price and time, print to screen
-		// SammysRentalPriceWithMethods.calculatePrice(rent);
-
-		/**
-		 * Begin Unit 5 Case 2
-		 */
-
-		// Declare rental object
-		// Rental rent1 = new Rental();
-
-		// Get contract number
-		// String contract1 = contractNumber();
-
-		// set the contract number to object
-		// rent1.setContractNumber(contract1);
-
-		// Get minutes rented
-		// int minutes1 = minutesRented();
-
-		// set minutes rented to rental object
-		// rent1.setHoursAndMinutes(minutes1);
-
-		// set phone number
-		// rent1.setPhoneNumber();
-
-		// print results
-		// printRental(rent1);
-
-		// Repeat with second rental object
-		// Rental rent2 = new Rental();
-		// String contract2 = contractNumber();
-		// rent2.setContractNumber(contract2);
-		// int minutes2 = minutesRented();
-		// rent2.setHoursAndMinutes(minutes2);
-		// rent2.setPhoneNumber();
-		// printRental(rent2);
-
-		// repeat with third rental objet
-		// Rental rent3 = new Rental();
-		// String contract3 = contractNumber();
-		// rent3.setContractNumber(contract3);
-		// int minutes3 = minutesRented();
-		// rent3.setHoursAndMinutes(minutes3);
-		// rent3.setPhoneNumber();
-		// printRental(rent3);
-
-		// Compare rental objects 1 and 2 and store in rent object 4
-		// Rental rent4 = compareRentals(rent1,rent2);
-
-		// print results rental object with largest amount of minutes rented
-		// printRental(rent4);
-
-		/*
-		 * 
-		 * START MODULE 9
-		 * 
-		 */
-		/*
-		// Declare array of Rental objects
-		String contractNum;
-		int minutes;
-		int equipment;
-
-		Rental[] r = new Rental[8];
-
-		// for loop to create, iterate, and print results of eight rental objects
-		for (int i = 0; i < 8; i++) {
-			r[i] = new Rental();
-			contractNum = contractNumber();
-			r[i].setContractNumber(contractNum);
-			minutes = minutesRented();
-			r[i].setHoursAndMinutes(minutes);
-			equipment = equipmentTypePrompt();
-			r[i].setEquipmentType(equipment);
-		}
-		// Prompt user for sorting options
-		sortOptions();
-		Scanner scan = new Scanner(System.in);
-		int userInput = scan.nextInt();
-
-		// while loop for user input validation
-		while (userInput > 3) {
-			try {
-				System.out.println("Must be between -1,1,2,3");
-				userInput = scan.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Invalid, please enter an integer");
-				scan.nextLine();
-			}
-		}
-
-		// sentinel loop to prompt user for options until sentinel is entered
-		while (userInput != -1) {
-			bubbleSort(r, userInput);
-
-			// list Event objects sorted
-			for (int i = 0; i < r.length; i++) {
-				System.out.println("Contract Num: " + r[i].getContractNumber());
-				System.out.println("Price: $" + r[i].getPrice());
-				System.out.println("Equipment Type: " + r[i].getEquipmentType());
-				System.out.println("Equipment Name: " + r[i].getEquipmentName() + "\n");
-			}
-			// Prompt user again for sorting options
-			sortOptions();
-			userInput = scan.nextInt();
-			while (userInput > 4) {
-				try {
-					System.out.println("Must be between -1,1,2,3");
-					userInput = scan.nextInt();
-				} catch (InputMismatchException e) {
-					System.out.println("Invalid, please enter an integer");
-					scan.nextLine();
-				}
-			}
-
-		}
-		System.out.print("Exiting Program...");
-		*/
 		 /*
 		  * 
 		  * START MODULE 10

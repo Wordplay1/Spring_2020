@@ -17,7 +17,7 @@ public class Rental {
 	private int equipmentType;
 	
 	// String array for Module 8 
-	public final static String[] equipmentNames = {"personal","watercraft","pontoon","boat","rowboat","canoe","kayak","beach chair","umbrella","other"};
+	public final static String[] equipmentNames = {"personal watercraft","pontoon","boat","rowboat","canoe","kayak","beach chair","umbrella","other"};
 
 	
 	public Rental() {
