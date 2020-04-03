@@ -116,7 +116,24 @@ public class EventDemo {
 		 * 
 		 * } System.out.print("Exiting Program...");
 		 */
-
+		Waitstaff waiter = new Waitstaff();
+		waiter.setPayRate(12);
+		System.out.println(waiter.getPayRate());
+		System.out.println(waiter.getJobTitle());
+		
+		Bartender bartender = new Bartender();
+		bartender.setPayRate(20);
+		System.out.println(bartender.getPayRate());
+		System.out.println(bartender.getJobTitle());
+		
+		
+		System.out.println(waiter.getPayRate());
+		System.out.println(waiter.getJobTitle());
+		
+		Coordinator coord = new Coordinator();
+		coord.setPayRate(20);
+		System.out.println(coord.getPayRate());
+		System.out.println(coord.getJobTitle());
 		/*
 		 * START MODULE 10
 		 * 
