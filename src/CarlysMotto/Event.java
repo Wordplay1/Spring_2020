@@ -93,22 +93,9 @@ public class Event {
 		String formattedPhoneNumber = "";
 
 		// format first 3 characters
-		formattedPhoneNumber += "(" + phoneNumber.substring(0, 3) + ")";
+		formattedPhoneNumber = "(" + phoneNumber.substring(0, 3) + ")" + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6, phoneNumber.length());
 
-		// formatnext three characters
-		formattedPhoneNumber += phoneNumber.substring(3, 6);
-
-		// Then append the "-" sign to the formattedPhoneNumber
-		formattedPhoneNumber += "-";
-
-		// format remaining characters
-		formattedPhoneNumber += phoneNumber.substring(6, phoneNumber.length());
-
-		// set formatted String to phoneNumber class variable
-		phoneNumber = formattedPhoneNumber;
-
-		// return phoneNumber
-		return phoneNumber;
+		return formattedPhoneNumber;
 	}
 
 	// function checks if event is large and return either true or false
@@ -118,7 +105,6 @@ public class Event {
 		} else
 			return false;
 	}
-
 	// method to set phone number
 	public void setPhone() {
 		String tempPhone = "";

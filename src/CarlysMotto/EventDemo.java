@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class EventDemo {
 
 	public static void main(String[] args) {
-		/*
-		 * // Instantiate the event object //Event event = new Event();
+		
+		 /* // Instantiate the event object //Event event = new Event();
 		 * 
 		 * // Set event number by invoking eventNumber() method //
 		 * event.setEventNumber(eventNumber());
@@ -77,8 +77,8 @@ public class EventDemo {
 		 * + event6.getEventNumber()); System.out.println("Number of guest is " +
 		 * event6.getNumberOfGuest()); System.out.println("Price is " +
 		 * event6.getPrice());
-		 */
-
+		 
+		*/
 		/*
 		 * 
 		 * MODULE 9 START
@@ -116,6 +116,8 @@ public class EventDemo {
 		 * 
 		 * } System.out.print("Exiting Program...");
 		 */
+	
+		 
 		Waitstaff waiter = new Waitstaff();
 		waiter.setPayRate(12);
 		System.out.println(waiter.getPayRate());
@@ -201,31 +203,30 @@ public class EventDemo {
 		System.out.print("Exiting Program...");
 
 	}
+
 	/*
-	// eventNumber() method to set event number from user input
-	public static void displayResults(Event event, String eventNum, int numberOfGuest, double price,
-			String phoneNumber) {
-
-		// Convert first letter to capital if lowercase
-		String s1 = event.getEventNumber();
-		s1 = s1.substring(0, 1).toUpperCase() + s1.substring(1).toLowerCase();
-
-		System.out.println("Event event number is " + s1);
-		System.out.println("Number of guest is " + numberOfGuest);
-		System.out.println("Phone number is: " + phoneNumber);
-		if (event.isLarge()) {
-			System.out.println("Event is large");
-			System.out.println("Price per person is " + Event.highPricePerGuest);
-		} else
-			System.out.println("Price per person is " + Event.lowPricePerGuest);
-		System.out.println("Price is " + price + "\n\n");
-		// String event = scan.nextLine();
-		
-		 	for(int i = 0; i < numberOfGuest; i++) {
-		 		System.out.println("Please come to my event!"); }
-		 
-	}// end eventNumber()
-	*/
+	 * // eventNumber() method to set event number from user input public static
+	 * void displayResults(Event event, String eventNum, int numberOfGuest, double
+	 * price, String phoneNumber) {
+	 * 
+	 * // Convert first letter to capital if lowercase String s1 =
+	 * event.getEventNumber(); s1 = s1.substring(0, 1).toUpperCase() +
+	 * s1.substring(1).toLowerCase();
+	 * 
+	 * System.out.println("Event event number is " + s1);
+	 * System.out.println("Number of guest is " + numberOfGuest);
+	 * System.out.println("Phone number is: " + phoneNumber); if (event.isLarge()) {
+	 * System.out.println("Event is large");
+	 * System.out.println("Price per person is " + Event.highPricePerGuest); } else
+	 * System.out.println("Price per person is " + Event.lowPricePerGuest);
+	 * System.out.println("Price is " + price + "\n\n"); // String event =
+	 * scan.nextLine();
+	 * 
+	 * for(int i = 0; i < numberOfGuest; i++) {
+	 * System.out.println("Please come to my event!"); }
+	 * 
+	 * }// end eventNumber()
+	 */
 	// contractNumber() method to set contract number
 	public static String eventNumber() {
 		System.out.println("\n\nWhats the event number?");

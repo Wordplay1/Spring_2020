@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 
  */
 
-public class DinnerEventDemo {
+public class StaffDinnerEvent {
 
 	public static void main(String[] args) {
 
