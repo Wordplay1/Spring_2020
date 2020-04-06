@@ -67,11 +67,13 @@ public class DinnerEvent extends Event {
 		System.out.println("Dessert is: " + desserts[dessert] + "\n");
 	}
 
+	// method to get event type overridden from Event class
 	@Override
 	public int getEventType() {
 		return eventType;
 	}
 
+	// method to get event names overridden from Event class
 	@Override
 	public String getEventName() {
 		if (eventType >= eventNames.length) {
@@ -80,24 +82,28 @@ public class DinnerEvent extends Event {
 		return eventNames[eventType];
 	}
 
+	// method to populate employee array
 	public void populateEmpArray(Employee[] obj) {
 		employeeRef = obj;
-	
+
 	}
 
+	// method to return employee array
 	public Object[] returnEmpArray() {
 		return employeeRef;
 	}
+
+	// method to print contents of each employee array object
 	public void printEventEmployees() {
 		System.out.println("** Employees for the event ** \n");
 		for (int i = 0; i < employeeRef.length; i++) {
-			if(employeeRef[i] != null) {
-			System.out.println("Job Title: " + employeeRef[i].getJobTitle());
-			System.out.println("Employee ID: " + employeeRef[i].getEmployeeID());
-			System.out.println("First Name: " + employeeRef[i].getFirstName());
-			System.out.println("Last Name: " + employeeRef[i].getLastName());
-			System.out.println("Pay Rate: " + employeeRef[i].getPayRate() + "%\n");
-			}else {
+			if (employeeRef[i] != null) {
+				System.out.println("Job Title: " + employeeRef[i].getJobTitle());
+				System.out.println("Employee ID: " + employeeRef[i].getEmployeeID());
+				System.out.println("First Name: " + employeeRef[i].getFirstName());
+				System.out.println("Last Name: " + employeeRef[i].getLastName());
+				System.out.println("Pay Rate: " + employeeRef[i].getPayRate() + "%\n");
+			} else {
 				break;
 			}
 		}

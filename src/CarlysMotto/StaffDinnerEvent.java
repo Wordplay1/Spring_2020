@@ -4,8 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /* @Author: Donald Mears
- * Title: DinnerEventDemo.java
- * Description: DinnerEventDemo to test DinnerEvent.java class.
+ * Title: StaffDinnerEvent.java
+ * Description: StaffDinnerEventDemo to test Inheritance.
  * 
  * 
  * 
@@ -31,6 +31,14 @@ public class StaffDinnerEvent {
 		 * setDessert(); d[i] = new DinnerEvent(eventNum, guestNum, entree, side1,
 		 * side2, dessert, eventType); d[i].getMenu(); }
 		 */
+		
+		
+		/*
+		 * START MODULE 11
+		 * 
+		 */
+		
+		//Declare variables
 		String eventNum;
 		int guestNum;
 		int entree;
@@ -40,31 +48,40 @@ public class StaffDinnerEvent {
 		int waitstaff;
 		int bartenders;
 		int i;
+		//declare employee array of objects
 		Employee[] emp = new Employee[15];
-
+		
+		//get user input foe event number, guest number, entrees, sides 1 & 2, dessert
 		eventNum = eventNumber();
 		guestNum = numberOfGuest();
 		entree = setEntree();
 		side1 = setSides();
 		side2 = setSidesTwo();
 		dessert = setDessert();
-
+		
+		//Declare DinnerEvent object and send values to constructor
 		DinnerEvent d = new DinnerEvent(eventNum, guestNum, entree, side1, side2, dessert);
-
+		
+		// determine number of waitstaff needed
 		waitstaff = (guestNum / 10) + 1;
+		// get waitstaff info from user for each waitstaff needed and store in employee array
 		for (i = 0; i < waitstaff; i++) {
 			emp[i] = getWaitStaff();
 		}
-
+		
+		// determine number of bartenders needed, get user input for bartenters,
+		// store in employee array, get user input for coordinator store in emp array
+		// populate DinnerEvent object array 
 		bartenders = (guestNum / 25) + 1;
-		for (; i < waitstaff + bartenders; ++i)
+		for (; i < waitstaff + bartenders; ++i) {
 			emp[i] = getBartenders();
+		}
 		emp[i] = getCoordinator();
 		d.populateEmpArray(emp);
 		++i;
 
 
-
+		// display event details
 		displayEventDetails(d);
 
 		/*
@@ -93,7 +110,8 @@ public class StaffDinnerEvent {
 		 */
 		System.out.print("Exiting Program...");
 	}
-
+	
+	// method to display all event details
 	public static void displayEventDetails(DinnerEvent d) {
 		System.out.println("** Event details **\n");
 		System.out.println("Phone Number: " + d.getPhoneNumber());
@@ -104,7 +122,8 @@ public class StaffDinnerEvent {
 		d.getMenu();
 		d.printEventEmployees();
 	}
-
+	
+	// method to get user input for waitstaff object
 	public static Waitstaff getWaitStaff() {
 		Scanner scan = new Scanner(System.in);
 		Waitstaff waiter = new Waitstaff();
@@ -118,7 +137,7 @@ public class StaffDinnerEvent {
 		waiter.setPayRate(scan.nextDouble());
 		return waiter;
 	}
-
+	// method to get user input for bartender object
 	public static Bartender getBartenders() {
 		Scanner scan = new Scanner(System.in);
 		Bartender bartenders = new Bartender();
@@ -132,7 +151,7 @@ public class StaffDinnerEvent {
 		bartenders.setPayRate(scan.nextDouble());
 		return bartenders;
 	}
-
+	// method to get user input for coordinator object
 	public static Coordinator getCoordinator() {
 		Scanner scan = new Scanner(System.in);
 		Coordinator coordinators = new Coordinator();
