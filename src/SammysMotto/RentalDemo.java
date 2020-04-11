@@ -100,131 +100,109 @@ public class RentalDemo {
 		 * 
 		 */
 		/*
-		// Declare array of Rental objects
-		String contractNum;
-		int minutes;
-		int equipment;
-
-		Rental[] r = new Rental[8];
-
-		// for loop to create, iterate, and print results of eight rental objects
-		for (int i = 0; i < 8; i++) {
-			r[i] = new Rental();
-			contractNum = contractNumber();
-			r[i].setContractNumber(contractNum);
-			minutes = minutesRented();
-			r[i].setHoursAndMinutes(minutes);
-			equipment = equipmentTypePrompt();
-			r[i].setEquipmentType(equipment);
-		}
-		// Prompt user for sorting options
-		sortOptions();
-		Scanner scan = new Scanner(System.in);
-		int userInput = scan.nextInt();
-
-		// while loop for user input validation
-		while (userInput > 3) {
-			try {
-				System.out.println("Must be between -1,1,2,3");
-				userInput = scan.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Invalid, please enter an integer");
-				scan.nextLine();
-			}
-		}
-
-		// sentinel loop to prompt user for options until sentinel is entered
-		while (userInput != -1) {
-			bubbleSort(r, userInput);
-
-			// list Event objects sorted
-			for (int i = 0; i < r.length; i++) {
-				System.out.println("Contract Num: " + r[i].getContractNumber());
-				System.out.println("Price: $" + r[i].getPrice());
-				System.out.println("Equipment Type: " + r[i].getEquipmentType());
-				System.out.println("Equipment Name: " + r[i].getEquipmentName() + "\n");
-			}
-			// Prompt user again for sorting options
-			sortOptions();
-			userInput = scan.nextInt();
-			while (userInput > 4) {
-				try {
-					System.out.println("Must be between -1,1,2,3");
-					userInput = scan.nextInt();
-				} catch (InputMismatchException e) {
-					System.out.println("Invalid, please enter an integer");
-					scan.nextLine();
-				}
-			}
-
-		}
-		System.out.print("Exiting Program...");
-		*/
-		 /*
-		  * 
-		  * START MODULE 10
-		  * 
+		 * // Declare array of Rental objects String contractNum; int minutes; int
+		 * equipment;
+		 * 
+		 * Rental[] r = new Rental[8];
+		 * 
+		 * // for loop to create, iterate, and print results of eight rental objects for
+		 * (int i = 0; i < 8; i++) { r[i] = new Rental(); contractNum =
+		 * contractNumber(); r[i].setContractNumber(contractNum); minutes =
+		 * minutesRented(); r[i].setHoursAndMinutes(minutes); equipment =
+		 * equipmentTypePrompt(); r[i].setEquipmentType(equipment); } // Prompt user for
+		 * sorting options sortOptions(); Scanner scan = new Scanner(System.in); int
+		 * userInput = scan.nextInt();
+		 * 
+		 * // while loop for user input validation while (userInput > 3) { try {
+		 * System.out.println("Must be between -1,1,2,3"); userInput = scan.nextInt(); }
+		 * catch (InputMismatchException e) {
+		 * System.out.println("Invalid, please enter an integer"); scan.nextLine(); } }
+		 * 
+		 * // sentinel loop to prompt user for options until sentinel is entered while
+		 * (userInput != -1) { bubbleSort(r, userInput);
+		 * 
+		 * // list Event objects sorted for (int i = 0; i < r.length; i++) {
+		 * System.out.println("Contract Num: " + r[i].getContractNumber());
+		 * System.out.println("Price: $" + r[i].getPrice());
+		 * System.out.println("Equipment Type: " + r[i].getEquipmentType());
+		 * System.out.println("Equipment Name: " + r[i].getEquipmentName() + "\n"); } //
+		 * Prompt user again for sorting options sortOptions(); userInput =
+		 * scan.nextInt(); while (userInput > 4) { try {
+		 * System.out.println("Must be between -1,1,2,3"); userInput = scan.nextInt(); }
+		 * catch (InputMismatchException e) {
+		 * System.out.println("Invalid, please enter an integer"); scan.nextLine(); } }
+		 * 
+		 * } System.out.print("Exiting Program...");
 		 */
-		String contract;
-		int minutes;
-		int equipment;
+		/*
+		 * 
+		 * START MODULE 10
+		 * 
+		 * 
+		 * 
+		 * String contract; int minutes; int equipment;
+		 * 
+		 * //Declare LessonWithRental object array LessonWithRental[] d = new
+		 * LessonWithRental[4];
+		 * 
+		 * //Build 4 LessonWithRental objects for(int i = 0; i < d.length; i++) {
+		 * contract = contractNumber(); minutes = minutesRented(); equipment =
+		 * equipmentTypePrompt(); d[i] = new
+		 * LessonWithRental(contract,minutes,equipment); d[i].getInstructor(); }
+		 * 
+		 * // Prompt user for sorting options sortOptions(); Scanner scan = new
+		 * Scanner(System.in); int userInput = scan.nextInt();
+		 * 
+		 * // while loop for user input validation while (userInput > 3) { try {
+		 * System.out.println("Must be between -1,1,2,3"); userInput = scan.nextInt(); }
+		 * catch (InputMismatchException e) {
+		 * System.out.println("Invalid, please enter an integer"); scan.nextLine(); } }
+		 * 
+		 * // sentinel loop to prompt user for options until sentinel is entered while
+		 * (userInput != -1) { bubbleSort(d, userInput);
+		 * 
+		 * // list Event objects sorted for (int i = 0; i < d.length; i++) {
+		 * System.out.println("Contract Num: " + d[i].getContractNumber());
+		 * System.out.println("Price: $" + d[i].getPrice());
+		 * System.out.println("Equipment Type: " + d[i].getEquipmentType());
+		 * System.out.println("Equipment Name: " + d[i].getEquipmentName());
+		 * d[i].getInstructor(); } // Prompt user again for sorting options
+		 * sortOptions(); userInput = scan.nextInt(); while (userInput > 4) { try {
+		 * System.out.println("Must be between -1,1,2,3"); userInput = scan.nextInt(); }
+		 * catch (InputMismatchException e) {
+		 * System.out.println("Invalid, please enter an integer"); scan.nextLine(); } }
+		 * 
+		 * }
+		 */
 		
-		//Declare LessonWithRental object array
-		LessonWithRental[] d = new LessonWithRental[4];
+		/*
+		 * 
+		 * START MODULE 11
+		 * 
+		 */
 		
-		//Build 4 LessonWithRental objects
-		for(int i = 0; i < d.length; i++) {
-			contract = contractNumber();
-			minutes = minutesRented();
-			equipment = equipmentTypePrompt();
-			d[i] = new LessonWithRental(contract,minutes,equipment);
-			d[i].getInstructor();
-		}
+		//Declare variables
+		String contractNumber;
+		int minutesRented;
+		int equipmentType;
+		Equipment equipment;
 		
-		// Prompt user for sorting options
-				sortOptions();
-				Scanner scan = new Scanner(System.in);
-				int userInput = scan.nextInt();
-
-				// while loop for user input validation
-				while (userInput > 3) {
-					try {
-						System.out.println("Must be between -1,1,2,3");
-						userInput = scan.nextInt();
-					} catch (InputMismatchException e) {
-						System.out.println("Invalid, please enter an integer");
-						scan.nextLine();
-					}
-				}
-
-				// sentinel loop to prompt user for options until sentinel is entered
-				while (userInput != -1) {
-					bubbleSort(d, userInput);
-
-					// list Event objects sorted
-					for (int i = 0; i < d.length; i++) {
-						System.out.println("Contract Num: " + d[i].getContractNumber());
-						System.out.println("Price: $" + d[i].getPrice());
-						System.out.println("Equipment Type: " + d[i].getEquipmentType());
-						System.out.println("Equipment Name: " + d[i].getEquipmentName());
-						d[i].getInstructor();
-					}
-					// Prompt user again for sorting options
-					sortOptions();
-					userInput = scan.nextInt();
-					while (userInput > 4) {
-						try {
-							System.out.println("Must be between -1,1,2,3");
-							userInput = scan.nextInt();
-						} catch (InputMismatchException e) {
-							System.out.println("Invalid, please enter an integer");
-							scan.nextLine();
-						}
-					}
-
-				}
-				System.out.print("Exiting Program...");
+		// get Object information from the user
+		contractNumber = contractNumber();
+		minutesRented = minutesRented();
+		equipmentType = equipmentTypePrompt();
 		
+		// declare and initialize Rental object
+		Rental r = new Rental(contractNumber,minutesRented,equipmentType);
+		
+		// retrieve child equipment object created in Equipment constructor
+		equipment = r.getEquipmentObj();
+		
+		// print details
+		printRental(r,equipment);
+		
+		System.out.print("Exiting Program...");
+
 	}
 
 	// contractNumber() method to set contract number
@@ -261,24 +239,30 @@ public class RentalDemo {
 	}
 
 	// Method to print results of rental object
-	public static void printRental(Rental rent) {
+	public static void printRental(Rental rent, Equipment e) {
 
 		String s1 = rent.getContractNumber();
 		s1 = s1.substring(0, 1).toUpperCase() + s1.substring(1).toLowerCase();
 
 		System.out.println("Contract number is: " + s1);
-		System.out.println("Phone number is: " + rent.getPhoneNumber());
-		System.out.println("Price is: " + rent.getPrice());
+		System.out.println("Equipment type is: " + e.getEquipmentName());
+		System.out.println("Base price is: " + rent.getBasePrice());
+		String s2 = e.getLessonPolicy();
+		System.out.println(s2);
+		System.out.println("Final price is: " + rent.getPrice());
 		System.out.println(
 				"Time rented: |Hours: " + rent.getHoursRented() + "| |Minutes: " + rent.getMinutesOver() + "|\n\n");
 
+		/*
 		int hours = rent.getHoursRented() % Rental.rate_hours;
 		int i = 0;
-
+		
+		
 		do {
 			System.out.println((i + 1) + "." + " Coupon good for 10% off next rental!");
 			i++;
 		} while (i < hours);
+		*/
 	}
 
 	// method to show sort options
@@ -289,13 +273,14 @@ public class RentalDemo {
 		System.out.println("** Choose 3 - Equipment Type");
 		System.out.println("** Choose -1 - Exit\n");
 	}
-	//equipmentTypePrompt() method to prompt user for equipment type
+
+	// equipmentTypePrompt() method to prompt user for equipment type
 	public static int equipmentTypePrompt() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please equipment type");
 		int equipment = scan.nextInt();
 
-		while (equipment < 0 || equipment > 8) {
+		while (equipment < 0 || equipment > 7) {
 			System.out.println("Please try again..");
 			equipment = scan.nextInt();
 		}

@@ -21,7 +21,7 @@ public class Waitstaff extends Employee {
 	// method to set pay rate overridden from employee class
 	@Override
 	public void setPayRate(double pRate) {
-
+		
 		if (pRate > 10.00) {
 			this.payRate = 10.00;
 		} else {

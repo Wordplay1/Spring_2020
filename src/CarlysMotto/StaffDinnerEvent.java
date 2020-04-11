@@ -31,14 +31,13 @@ public class StaffDinnerEvent {
 		 * setDessert(); d[i] = new DinnerEvent(eventNum, guestNum, entree, side1,
 		 * side2, dessert, eventType); d[i].getMenu(); }
 		 */
-		
-		
+
 		/*
 		 * START MODULE 11
 		 * 
 		 */
-		
-		//Declare variables
+
+		// Declare variables
 		String eventNum;
 		int guestNum;
 		int entree;
@@ -48,30 +47,31 @@ public class StaffDinnerEvent {
 		int waitstaff;
 		int bartenders;
 		int i;
-		//declare employee array of objects
+		// declare employee array of objects
 		Employee[] emp = new Employee[15];
-		
-		//get user input foe event number, guest number, entrees, sides 1 & 2, dessert
+
+		// get user input foe event number, guest number, entrees, sides 1 & 2, dessert
 		eventNum = eventNumber();
 		guestNum = numberOfGuest();
 		entree = setEntree();
 		side1 = setSides();
 		side2 = setSidesTwo();
 		dessert = setDessert();
-		
-		//Declare DinnerEvent object and send values to constructor
+
+		// Declare DinnerEvent object and send values to constructor
 		DinnerEvent d = new DinnerEvent(eventNum, guestNum, entree, side1, side2, dessert);
-		
+
 		// determine number of waitstaff needed
 		waitstaff = (guestNum / 10) + 1;
-		// get waitstaff info from user for each waitstaff needed and store in employee array
+		// get waitstaff info from user for each waitstaff needed and store in employee
+		// array
 		for (i = 0; i < waitstaff; i++) {
 			emp[i] = getWaitStaff();
 		}
-		
+
 		// determine number of bartenders needed, get user input for bartenters,
 		// store in employee array, get user input for coordinator store in emp array
-		// populate DinnerEvent object array 
+		// populate DinnerEvent object array
 		bartenders = (guestNum / 25) + 1;
 		for (; i < waitstaff + bartenders; ++i) {
 			emp[i] = getBartenders();
@@ -79,7 +79,6 @@ public class StaffDinnerEvent {
 		emp[i] = getCoordinator();
 		d.populateEmpArray(emp);
 		++i;
-
 
 		// display event details
 		displayEventDetails(d);
@@ -110,22 +109,23 @@ public class StaffDinnerEvent {
 		 */
 		System.out.print("Exiting Program...");
 	}
-	
+
 	// method to display all event details
 	public static void displayEventDetails(DinnerEvent d) {
 		System.out.println("** Event details **\n");
 		System.out.println("Phone Number: " + d.getPhoneNumber());
 		System.out.println("Event Number: " + d.getEventNumber());
 		System.out.println("Guest Number: " + d.getNumberOfGuest() + "\n");
-		
+
 		System.out.println("** Menu Includes **\n");
 		d.getMenu();
 		d.printEventEmployees();
 	}
-	
+
 	// method to get user input for waitstaff object
 	public static Waitstaff getWaitStaff() {
 		Scanner scan = new Scanner(System.in);
+		double payrate;
 		Waitstaff waiter = new Waitstaff();
 		System.out.println("Please enter Waiter/Watress employeeID number");
 		waiter.setEmployeeID(scan.nextLine());
@@ -134,12 +134,19 @@ public class StaffDinnerEvent {
 		System.out.println("Please enter Waiter/Watress last name");
 		waiter.setLastName(scan.nextLine());
 		System.out.println("Please enter Waiter/Watress pay rate");
-		waiter.setPayRate(scan.nextDouble());
+		while (!scan.hasNextDouble()) {
+			System.out.println("Please enter a number");
+			scan.next();
+		}
+		payrate = scan.nextDouble();
+		waiter.setPayRate(payrate);
 		return waiter;
 	}
+
 	// method to get user input for bartender object
 	public static Bartender getBartenders() {
 		Scanner scan = new Scanner(System.in);
+		double payrate;
 		Bartender bartenders = new Bartender();
 		System.out.println("Please enter bartender's employeeID number");
 		bartenders.setEmployeeID(scan.nextLine());
@@ -148,12 +155,19 @@ public class StaffDinnerEvent {
 		System.out.println("Please enter bartender's last name");
 		bartenders.setLastName(scan.nextLine());
 		System.out.println("Please enter bartender's pay rate");
-		bartenders.setPayRate(scan.nextDouble());
+		while (!scan.hasNextDouble()) {
+			System.out.println("Please enter a number");
+			scan.next();
+		}
+		payrate = scan.nextDouble();
+		bartenders.setPayRate(payrate);
 		return bartenders;
 	}
+
 	// method to get user input for coordinator object
 	public static Coordinator getCoordinator() {
 		Scanner scan = new Scanner(System.in);
+		double payrate;
 		Coordinator coordinators = new Coordinator();
 		System.out.println("Please enter coordinator's employeeID number");
 		coordinators.setEmployeeID(scan.nextLine());
@@ -162,7 +176,12 @@ public class StaffDinnerEvent {
 		System.out.println("Please enter coordinator's last name");
 		coordinators.setLastName(scan.nextLine());
 		System.out.println("Please enter coordinator's pay rate");
-		coordinators.setPayRate(scan.nextDouble());
+		while (!scan.hasNextDouble()) {
+			System.out.println("Please enter a number");
+			scan.next();
+		}
+		payrate = scan.nextDouble();
+		coordinators.setPayRate(payrate);
 		return coordinators;
 	}
 
@@ -224,14 +243,23 @@ public class StaffDinnerEvent {
 
 	// method to take user input for number of guest
 	public static int numberOfGuest() {
-		System.out.println("How many guest?");
-		Scanner scan = new Scanner(System.in);
-		int guest = scan.nextInt();
+		final int GUEST_MIN = 5;
+		final int GUEST_MAX = 100;
+		int guest = 0;
 
-		while (guest < 5 || guest > 100) {
-			System.out.println("Please try again..");
-			guest = scan.nextInt();
-		}
+		Scanner scan = new Scanner(System.in);
+		do {
+			System.out.println("How many guest?");
+			try {
+				guest = scan.nextInt();
+				if (guest < GUEST_MIN || guest > GUEST_MAX) {
+					System.out.println("Not valid number please enter number between 5 - 100");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Must be an integer");
+				scan.next();
+			}
+		} while (guest < GUEST_MIN || guest > GUEST_MAX);
 		return guest;
 	}
 
@@ -250,53 +278,101 @@ public class StaffDinnerEvent {
 
 	// setEntree() method to get entree from user
 	public static int setEntree() {
-		int entree;
+		int entree = -1;
+		final int ENTREE_MIN = 0;
+		final int ENTREE_MAX = 2;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("\nPlease select dinner options");
 		System.out.println("** Entrees");
 		System.out.println("** 0. Salmon");
 		System.out.println("** 1. Steak");
 		System.out.println("** 2. Chicken");
-		entree = scan.nextInt();
+		do {
+			try {
+				entree = scan.nextInt();
+				if (entree < ENTREE_MIN || entree > ENTREE_MAX) {
+					System.out.println("Not valid number please enter number between 0 - 2");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Must be an integer");
+				scan.next();
+			}
+		} while (entree < ENTREE_MIN || entree > ENTREE_MAX);
 		return entree;
 	}
 
 	// setSides() method to get side1 from user
 	public static int setSides() {
-		int side1;
+		int side = -1;
+		final int SIDE_MIN = 0;
+		final int SIDE_MAX = 2;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("\nPlease select side 1 options");
 		System.out.println("** Entrees");
 		System.out.println("** 0. Mashed Potatoes");
 		System.out.println("** 1. Broccoli");
 		System.out.println("** 2. Mac & Cheese");
-		side1 = scan.nextInt();
-		return side1;
+		do {
+			try {
+				side = scan.nextInt();
+				if (side < SIDE_MIN || side > SIDE_MAX) {
+					System.out.println("Not valid number please enter number between 0 - 2");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Must be an integer");
+				scan.next();
+			}
+		} while (side < SIDE_MIN || side > SIDE_MAX);
+		return side;
 	}
 
 	// setSidesTwo() method to get side2 from user
 	public static int setSidesTwo() {
-		int side2;
+		int side = -1;
+		final int SIDE_MIN = 0;
+		final int SIDE_MAX = 2;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("\nPlease select side 2 options");
 		System.out.println("** Entrees");
 		System.out.println("** 0. Mashed Potatoes");
 		System.out.println("** 1. Broccoli");
 		System.out.println("** 2. Mac & Cheese");
-		side2 = scan.nextInt();
-		return side2;
+		do {
+			try {
+				side = scan.nextInt();
+				if (side < SIDE_MIN || side > SIDE_MAX) {
+					System.out.println("Not valid number please enter number between 0 - 2");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Must be an integer");
+				scan.next();
+			}
+		} while (side < SIDE_MIN || side > SIDE_MAX);
+		return side;
 	}
 
 	// setDessert() method to get dessert from user
 	public static int setDessert() {
-		int dessert;
+		int dessert = -1;
+		final int DESSERT_MIN = 0;
+		final int DESSERT_MAX = 2;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("\nPlease select dessert options");
 		System.out.println("** Entrees");
 		System.out.println("** 0. Ice Cream");
 		System.out.println("** 1. Cheesecake");
 		System.out.println("** 2. Cookies");
-		dessert = scan.nextInt();
+		do {
+			try {
+				dessert = scan.nextInt();
+				if (dessert < DESSERT_MIN || dessert > DESSERT_MAX) {
+					System.out.println("Not valid number please enter number between 0 - 2");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Must be an integer");
+				scan.next();
+			}
+		} while (dessert < DESSERT_MIN || dessert > DESSERT_MAX);
 		return dessert;
 	}
 
