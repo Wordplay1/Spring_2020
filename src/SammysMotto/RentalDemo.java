@@ -227,14 +227,22 @@ public class RentalDemo {
 		// method to get minutes rented from user
 
 	public static int minutesRented() {
-		System.out.println("Enter the minutes rented..");
+		final int MIN_MINS = 60;
+		final int MAX_MINS = 7200;
 		Scanner scan = new Scanner(System.in);
-		int minutes = scan.nextInt();
-
-		while (minutes < 60 || minutes > 7200) {
-			System.out.println("Please try again..");
-			minutes = scan.nextInt();
-		}
+		int minutes = 0;
+		System.out.println("Enter the minutes rented");
+		do {
+			try {
+				minutes = scan.nextInt();
+				if (minutes < MIN_MINS || minutes > MAX_MINS) {
+					System.out.println("Not valid number please enter number between 60 - 7200");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Must be an integer");
+				scan.next();
+			}
+		} while (minutes < MIN_MINS || minutes > MAX_MINS);
 		return minutes;
 	}
 
@@ -276,14 +284,23 @@ public class RentalDemo {
 
 	// equipmentTypePrompt() method to prompt user for equipment type
 	public static int equipmentTypePrompt() {
+		final int EQUIP_MIN = 0;
+		final int EQUIP_MAX = 7;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please equipment type");
-		int equipment = scan.nextInt();
-
-		while (equipment < 0 || equipment > 7) {
-			System.out.println("Please try again..");
-			equipment = scan.nextInt();
-		}
+		int equipment = -1;
+		
+		do {
+			try {
+				equipment = scan.nextInt();
+				if (equipment < EQUIP_MIN || equipment > EQUIP_MAX) {
+					System.out.println("Not valid number please enter number between 0 - 7");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Must be an integer");
+				scan.next();
+			}
+		} while (equipment < EQUIP_MIN || equipment > EQUIP_MAX);
 		return equipment;
 	}
 
