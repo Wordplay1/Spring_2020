@@ -4,7 +4,13 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+/**
+ * @author donaldmears
+ * @title DisplayDinnerEventFile.java
+ * @description Program reads file and prints contents
+ * 
+ *
+ */
 public class DisplayDinnerEventFile {
 
 	public static void main(String[] args) {

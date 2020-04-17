@@ -12,9 +12,9 @@ import java.nio.file.StandardOpenOption;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/* @Author: Donald Mears
- * Title: StaffDinnerEvent.java
- * Description: StaffDinnerEventDemo to test Inheritance.
+/* @author: Donald Mears
+ * @title: StaffDinnerEventAndCreateFile.java
+ * @description: Program test writing data to external file.
  * 
  * 
  * 
@@ -95,15 +95,24 @@ public class StaffDinnerEventAndCreateFile {
 		// display event details
 		displayEventDetails(d);
 		*/
+		/**
+		 * 
+		 * Module 13 Case 1
+		 * 
+		 */
 		
+		//declare variables
 		String eventNum;
 		int guestNum;
 		int eventType;
 		
+		//declare and initialize file
 		Path file = Paths.get("/Users/donaldmears/Documents/Wilmington University/CSC335/data.rtf");
 		
+		//Declare 3 DinnerEvent objects
 		DinnerEvent[] d = new DinnerEvent[3];
 		
+		//loop to gain user input, create single object, send to WriteObjectToFile() method
 		for(int i = 0; i < d.length; i++) {
 			
 			eventNum = eventNumber();
@@ -143,6 +152,7 @@ public class StaffDinnerEventAndCreateFile {
 		 */
 		System.out.print("Exiting Program...");
 	}
+	// method to print DinnerEvent information to file
 	public static void WriteObjectToFile(Event e, Path file) {
 		
 		String s = e.getEventNumber() + "\n" + e.getNumberOfGuest() + "\n" + e.getEventType() + "\n" + e.getEventName() + "\n" + e.getPrice() + "\n\n";
