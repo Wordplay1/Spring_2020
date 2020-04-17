@@ -43,6 +43,11 @@ public class DinnerEvent extends Event {
 		this.setPhone();
 		phoneNumber = this.getPhoneNumber();
 	}
+	
+	public DinnerEvent(String eventNum, int numGuest, int eType) {
+		super(eventNum,numGuest);
+		eventType = eType;
+	}
 
 	// getMenu() prints chosen dinner items back to user
 	public void getMenu() {

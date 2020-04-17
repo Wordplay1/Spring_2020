@@ -29,6 +29,13 @@ public class Event {
 	public Event(String eventNum, int numOfGuest) {
 		this.eventNumber = eventNum;
 		this.numberOfGuest = numOfGuest;
+		setGuest(numOfGuest);
+	}
+	
+	public Event(String eventNum, int numOfGuest, int price) {
+		this.eventNumber = eventNum;
+		this.numberOfGuest = numOfGuest;
+		this.price = price;
 	}
 
 	// setEventNumber methods to set event number

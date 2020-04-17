@@ -20,7 +20,7 @@ import java.util.Scanner;
  * 
  */
 
-public class StaffDinnerEvent {
+public class StaffDinnerEventAndCreateFile {
 
 
 	
@@ -153,6 +153,7 @@ public class StaffDinnerEvent {
 			output.write(data);
 			output.flush();
 			output.close();
+			System.out.println("Input printed to file. \n\n");
 		}catch(Exception a){
 			System.out.println("No file.");
 		}
