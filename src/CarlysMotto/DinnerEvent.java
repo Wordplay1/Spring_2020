@@ -43,9 +43,9 @@ public class DinnerEvent extends Event {
 		this.setPhone();
 		phoneNumber = this.getPhoneNumber();
 	}
-	
+
 	public DinnerEvent(String eventNum, int numGuest, int eType) {
-		super(eventNum,numGuest);
+		super(eventNum, numGuest);
 		eventType = eType;
 	}
 

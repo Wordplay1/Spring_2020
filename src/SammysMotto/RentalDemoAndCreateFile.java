@@ -1,6 +1,7 @@
 package SammysMotto;
 
 import java.io.BufferedOutputStream;
+
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,7 +13,14 @@ import java.util.Scanner;
 import CarlysMotto.DinnerEvent;
 import CarlysMotto.Event;
 
-public class RentalDemo {
+/*
+ * @author: Donald Mears
+ * @title: RentalDemoAndCreateFile
+ * @description: Program creates 2 rental objects and prints them to external text file
+ * 
+ */
+
+public class RentalDemoAndCreateFile {
 
 	public static void main(String[] args) {
 
@@ -208,6 +216,12 @@ public class RentalDemo {
 		// print details
 		printRental(r, equipment);
 		*/
+		
+		/*
+		 * 
+		 * START MODULE 13 CASE 2
+		 * 
+		 */
 		
 		// declare variables
 		String contractNum;

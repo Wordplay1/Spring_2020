@@ -25,13 +25,13 @@ public class Event {
 
 	// String array for module 8
 	public final static String[] eventNames = { "Wedding", "Baptism", "Birthday", "Corporate", "Other" };
-	
+
 	public Event(String eventNum, int numOfGuest) {
 		this.eventNumber = eventNum;
 		this.numberOfGuest = numOfGuest;
 		setGuest(numOfGuest);
 	}
-	
+
 	public Event(String eventNum, int numOfGuest, int price) {
 		this.eventNumber = eventNum;
 		this.numberOfGuest = numOfGuest;
@@ -69,10 +69,10 @@ public class Event {
 
 	// method to get return name based on eventType
 	public String getEventName() {
-		if(eventType >= eventNames.length) {
+		if (eventType >= eventNames.length) {
 			eventType = eventNames.length - 1;
 			return eventNames[eventType];
-		}else {
+		} else {
 			return eventNames[eventType];
 		}
 	}
@@ -100,7 +100,8 @@ public class Event {
 		String formattedPhoneNumber = "";
 
 		// format first 3 characters
-		formattedPhoneNumber = "(" + phoneNumber.substring(0, 3) + ")" + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6, phoneNumber.length());
+		formattedPhoneNumber = "(" + phoneNumber.substring(0, 3) + ")" + phoneNumber.substring(3, 6) + "-"
+				+ phoneNumber.substring(6, phoneNumber.length());
 
 		return formattedPhoneNumber;
 	}
@@ -112,6 +113,7 @@ public class Event {
 		} else
 			return false;
 	}
+
 	// method to set phone number
 	public void setPhone() {
 		String tempPhone = "";

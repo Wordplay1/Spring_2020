@@ -22,9 +22,6 @@ import java.util.Scanner;
 
 public class StaffDinnerEventAndCreateFile {
 
-
-	
-
 	public static void main(String[] args) {
 
 		/*
@@ -47,85 +44,64 @@ public class StaffDinnerEventAndCreateFile {
 		/*
 		 * START MODULE 11
 		 * 
-		 
-		
-		// Declare variables
-		String eventNum;
-		int guestNum;
-		int entree;
-		int side1;
-		int side2;
-		int dessert;
-		int waitstaff;
-		int bartenders;
-		int i;
-		// declare employee array of objects
-		Employee[] emp = new Employee[15];
-
-		// get user input foe event number, guest number, entrees, sides 1 & 2, dessert
-		eventNum = eventNumber();
-		guestNum = numberOfGuest();
-		entree = setEntree();
-		side1 = setSides();
-		side2 = setSidesTwo();
-		dessert = setDessert();
-
-		// Declare DinnerEvent object and send values to constructor
-		DinnerEvent d = new DinnerEvent(eventNum, guestNum, entree, side1, side2, dessert);
-
-		// determine number of waitstaff needed
-		waitstaff = (guestNum / 10) + 1;
-		// get waitstaff info from user for each waitstaff needed and store in employee
-		// array
-		for (i = 0; i < waitstaff; i++) {
-			emp[i] = getWaitStaff();
-		}
-
-		// determine number of bartenders needed, get user input for bartenters,
-		// store in employee array, get user input for coordinator store in emp array
-		// populate DinnerEvent object array
-		bartenders = (guestNum / 25) + 1;
-		for (; i < waitstaff + bartenders; ++i) {
-			emp[i] = getBartenders();
-		}
-		emp[i] = getCoordinator();
-		d.populateEmpArray(emp);
-		++i;
-
-		// display event details
-		displayEventDetails(d);
-		*/
+		 * 
+		 * 
+		 * // Declare variables String eventNum; int guestNum; int entree; int side1;
+		 * int side2; int dessert; int waitstaff; int bartenders; int i; // declare
+		 * employee array of objects Employee[] emp = new Employee[15];
+		 * 
+		 * // get user input foe event number, guest number, entrees, sides 1 & 2,
+		 * dessert eventNum = eventNumber(); guestNum = numberOfGuest(); entree =
+		 * setEntree(); side1 = setSides(); side2 = setSidesTwo(); dessert =
+		 * setDessert();
+		 * 
+		 * // Declare DinnerEvent object and send values to constructor DinnerEvent d =
+		 * new DinnerEvent(eventNum, guestNum, entree, side1, side2, dessert);
+		 * 
+		 * // determine number of waitstaff needed waitstaff = (guestNum / 10) + 1; //
+		 * get waitstaff info from user for each waitstaff needed and store in employee
+		 * // array for (i = 0; i < waitstaff; i++) { emp[i] = getWaitStaff(); }
+		 * 
+		 * // determine number of bartenders needed, get user input for bartenters, //
+		 * store in employee array, get user input for coordinator store in emp array //
+		 * populate DinnerEvent object array bartenders = (guestNum / 25) + 1; for (; i
+		 * < waitstaff + bartenders; ++i) { emp[i] = getBartenders(); } emp[i] =
+		 * getCoordinator(); d.populateEmpArray(emp); ++i;
+		 * 
+		 * // display event details displayEventDetails(d);
+		 */
 		/**
 		 * 
 		 * Module 13 Case 1
 		 * 
 		 */
-		
-		//declare variables
+
+		// declare variables
 		String eventNum;
 		int guestNum;
 		int eventType;
-		
-		//declare and initialize file
+
+		// declare and initialize file
 		Path file = Paths.get("/Users/donaldmears/Documents/Wilmington University/CSC335/data.rtf");
-		
-		//Declare 3 DinnerEvent objects
+
+		// Declare 3 DinnerEvent objects
 		DinnerEvent[] d = new DinnerEvent[3];
-		
-		//loop to gain user input, create single object, send to WriteObjectToFile() method
-		for(int i = 0; i < d.length; i++) {
-			
+
+		// loop to gain user input, create single object, send to WriteObjectToFile()
+		// method
+		for (int i = 0; i < d.length; i++) {
+
 			eventNum = eventNumber();
-			
+
 			guestNum = numberOfGuest();
-			
+
 			eventType = eventTypePrompt();
-			
-			d[i] = new DinnerEvent(eventNum,guestNum,eventType);
-			
-			WriteObjectToFile(d[i],file);
+
+			d[i] = new DinnerEvent(eventNum, guestNum, eventType);
+
+			WriteObjectToFile(d[i], file);
 		}
-	
+
 		/*
 		 * sortOptions(); Scanner scan = new Scanner(System.in); int userInput =
 		 * scan.nextInt();
@@ -152,22 +128,25 @@ public class StaffDinnerEventAndCreateFile {
 		 */
 		System.out.print("Exiting Program...");
 	}
+
 	// method to print DinnerEvent information to file
 	public static void WriteObjectToFile(Event e, Path file) {
-		
-		String s = e.getEventNumber() + "\n" + e.getNumberOfGuest() + "\n" + e.getEventType() + "\n" + e.getEventName() + "\n" + e.getPrice() + "\n\n";
+
+		String s = e.getEventNumber() + "\n" + e.getNumberOfGuest() + "\n" + e.getEventType() + "\n" + e.getEventName()
+				+ "\n" + e.getPrice() + "\n\n";
 		byte[] data = s.getBytes();
 		OutputStream output = null;
 		try {
-			output = new BufferedOutputStream(Files.newOutputStream(file,StandardOpenOption.CREATE,StandardOpenOption.APPEND));
+			output = new BufferedOutputStream(
+					Files.newOutputStream(file, StandardOpenOption.CREATE, StandardOpenOption.APPEND));
 			output.write(data);
 			output.flush();
 			output.close();
 			System.out.println("Input printed to file. \n\n");
-		}catch(Exception a){
+		} catch (Exception a) {
 			System.out.println("No file.");
 		}
-		
+
 	}
 
 	// method to display all event details
